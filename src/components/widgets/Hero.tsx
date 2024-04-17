@@ -3,10 +3,10 @@ import { Image } from "@unpic/qwik";
 
 export default component$(() => {
   return (
-    <section class="pb-16 pt-20 text-center lg:pt-32">
+    <section class="pb-0 pt-0 text-center lg:pt-20">
       <h1 class="font-display mx-auto max-w-4xl text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
         Selling a property in Australia has{" "}
-        <span class="relative whitespace-nowrap text-blue-600">
+        <span class="relative  text-blue-600">
           <svg
             aria-hidden="true"
             viewBox="0 0 418 42"
@@ -23,23 +23,22 @@ export default component$(() => {
         in 45 days with us and saved $100,000
       </p>
 
-      <div class="mt-10 flex justify-center gap-x-6">
-        <span class="ml-4 rtl:ml-0 rtl:mr-4">
+      <div class="m-auto flex max-w-xs flex-col flex-nowrap justify-center gap-4 pt-5 sm:max-w-md sm:flex-row sm:justify-center lg:m-0 lg:max-w-7xl lg:justify-center">
+        <div class="flex w-full sm:w-auto">
+          <button class="btn w-full bg-gray-50 dark:bg-transparent">
+            See video
+          </button>
+        </div>
+        <div class="flex w-full sm:w-auto">
           <a
+            class="btn btn-primary w-full sm:mb-0"
             href="https://github.com/onwidget/qwind"
-            class="btn  px-5.5 outline-primary ml-2 w-auto py-2.5 text-sm font-semibold shadow-none outline md:px-6"
-          >
-            Watch video
-          </a>
-        </span>
-        <span class="ml-4 rtl:ml-0 rtl:mr-4">
-          <a
-            href="/register"
-            class="btn btn-primary px-5.5 ml-2 w-auto py-2.5 text-sm font-semibold shadow-none md:px-6"
+            target="_blank"
+            rel="noopener"
           >
             Sign up
           </a>
-        </span>
+        </div>
       </div>
       {/* <div class="mt-36 lg:mt-44">
         <p class="font-display text-base text-slate-900">
