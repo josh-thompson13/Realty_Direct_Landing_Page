@@ -1,51 +1,66 @@
 import { component$ } from "@builder.io/qwik";
 import { Image } from "@unpic/qwik";
 
+const coverImage =
+  "https://images.unsplash.com/photo-1590767950092-42b8362368da?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3087&q=80";
+
 export default component$(() => {
   return (
-    <section class="pb-16 pt-20 text-center lg:pt-32">
-      <h1 class="font-display mx-auto max-w-4xl text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
-        Selling a property in Australia has{" "}
-        <span class="relative whitespace-nowrap text-blue-600">
-          <svg
-            aria-hidden="true"
-            viewBox="0 0 418 42"
-            class="absolute left-0 top-2/3 h-[0.58em] w-full fill-blue-300/70"
-            preserveAspectRatio="none"
-          >
-            <path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z" />
-          </svg>
-          <span class="relative">never been this easy</span>
-        </span>{" "}
-      </h1>
-      <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
-        See how one savvy property owner sold their $4 million dollar property
-        in 45 days with us and saved $100,000
-      </p>
+    <section class="relative md:-mt-[76px] not-prose">
+      <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+        <div class="py-12 md:py-20 lg:py-0 lg:flex lg:items-center lg:h-screen lg:gap-8">
+          <div class="basis-1/2 text-center lg:text-left pb-10 md:pb-16 mx-auto">
+            <h1 class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200">
+              Free template for <br class="hidden lg:block" />{" "}
+              <span class="hidden lg:inline">create a website using </span> <span class="text-[#039de1]">Qwik</span> +{" "}
+              <span class="sm:whitespace-nowrap text-[#039de1]">Tailwind CSS</span>
+            </h1>
+            <div class="max-w-3xl mx-auto lg:max-w-none">
+              <p class="text-xl text-muted mb-6 dark:text-slate-300">
+                <span class="font-semibold underline decoration-wavy decoration-1 decoration-secondary-600 underline-offset-2">
+                  Qwind
+                </span>{" "}
+                is a production ready template to start your new website using <em>Qwik</em> + <em>Tailwind CSS</em>. It
+                has been designed following Best Practices, SEO, Accessibility,{" "}
+                <span class="inline md:hidden">...</span>
+                <span class="hidden md:inline">
+                  Dark Mode, Great Page Speed, image optimization, sitemap generation and more.
+                </span>
+              </p>
 
-      <div class="mt-10 flex justify-center gap-x-6">
-        <span class="ml-4 rtl:ml-0 rtl:mr-4">
-          <a
-            href="https://github.com/onwidget/qwind"
-            class="btn  px-5.5 outline-primary ml-2 w-auto py-2.5 text-sm font-semibold shadow-none outline md:px-6"
-          >
-            Watch video
-          </a>
-        </span>
-        <span class="ml-4 rtl:ml-0 rtl:mr-4">
-          <a
-            href="/register"
-            class="btn btn-primary px-5.5 ml-2 w-auto py-2.5 text-sm font-semibold shadow-none md:px-6"
-          >
-            Sign up
-          </a>
-        </span>
+              <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 lg:justify-start lg:m-0 lg:max-w-7xl">
+                <div class="flex w-full sm:w-auto">
+                  <a
+                    class="btn btn-primary sm:mb-0 w-full"
+                    href="https://github.com/onwidget/qwind"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Get template
+                  </a>
+                </div>
+                <div class="flex w-full sm:w-auto">
+                  <button class="btn w-full bg-gray-50 dark:bg-transparent">Learn more</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="basis-1/2">
+            <Image
+              src={coverImage}
+              layout="constrained"
+              width={493}
+              height={616}
+              alt="Qwind Hero Image (Cool dog)"
+              class="mx-auto lg:mr-0 w-full drop-shadow-2xl rounded-md"
+              priority={true}
+              breakpoints={[320, 480, 640, 768, 1024]}
+            />
+          </div>
+        </div>
       </div>
-      {/* <div class="mt-36 lg:mt-44">
-        <p class="font-display text-base text-slate-900">
-          Trusted by these six companies so far
-        </p>
-      </div> */}
     </section>
   );
 });
