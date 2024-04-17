@@ -23,7 +23,7 @@ export default component$(() => {
         in 45 days with us and saved $100,000
       </p>
 
-      <div class="m-auto flex max-w-xs flex-col flex-nowrap justify-center gap-4 pt-5 sm:max-w-md sm:flex-row sm:justify-center lg:m-0 lg:max-w-7xl lg:justify-center">
+      <div class="m-auto flex max-w-xs flex-col  justify-center gap-4 pt-5 sm:max-w-md sm:flex-row sm:justify-center ">
         <div class="flex w-full sm:w-auto">
           <button class="btn w-full bg-gray-50 dark:bg-transparent">
             See video
