@@ -10,10 +10,16 @@ import CallToAction from "~/components/widgets/CallToAction";
 
 import { qwikSerialized } from "~/utils/qwikSerialized";
 
-const IconBrandTailwind = qwikSerialized(() => import("../components/icons/IconBrandTailwind"));
+const IconBrandTailwind = qwikSerialized(
+  () => import("../components/icons/IconBrandTailwind"),
+);
 const IconApps = qwikSerialized(() => import("../components/icons/IconApps"));
-const IconRocket = qwikSerialized(() => import("../components/icons/IconRocket"));
-const IconBrandGoogle = qwikSerialized(() => import("../components/icons/IconBrandGoogle"));
+const IconRocket = qwikSerialized(
+  () => import("../components/icons/IconRocket"),
+);
+const IconBrandGoogle = qwikSerialized(
+  () => import("../components/icons/IconBrandGoogle"),
+);
 const IconBulb = qwikSerialized(() => import("../components/icons/IconBulb"));
 
 import { SITE } from "~/config.mjs";
@@ -22,9 +28,10 @@ export default component$(() => {
   return (
     <>
       <Hero />
+      <Steps />
       <Features
         highlight="Features"
-        title="What you get with Qwind"
+        title="Our offerings"
         subtitle="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae."
         items={[
           {
@@ -60,11 +67,11 @@ export default component$(() => {
             title: "Open to new ideas and contributions",
             description:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.",
-            icon: IconBulb
+            icon: IconBulb,
           },
         ]}
       />
-      <Steps />
+
       <FAQs
         title="Frequently Asked Questions"
         subtitle="Duis turpis dui, fringilla mattis sem nec, fringilla euismod neque. Morbi tincidunt lacus nec tortor scelerisque pulvinar."
@@ -96,7 +103,8 @@ export default component$(() => {
               "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
           },
           {
-            title: "If you could only ask one question to each person you meet, what would that question be?",
+            title:
+              "If you could only ask one question to each person you meet, what would that question be?",
             description:
               "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
           },

@@ -16,9 +16,9 @@ export default component$(() => {
   return (
     <header
       id="header"
-      class={`sticky top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out ${
+      class={`sticky top-0 z-40 mx-auto w-full flex-none border-b border-gray-50/0 transition-[opacity] ease-in-out ${
         store.isScrolling
-          ? " md:bg-white/90 md:backdrop-blur-sm dark:md:bg-slate-900/90 bg-white dark:bg-slate-900"
+          ? " bg-white dark:bg-slate-900 md:bg-white/90 md:backdrop-blur-sm dark:md:bg-slate-900/90"
           : ""
       }`}
       window:onScroll$={() => {
@@ -30,34 +30,31 @@ export default component$(() => {
       }}
     >
       <div class="absolute inset-0"></div>
-      <div class="relative text-default py-3 px-3 md:px-6 mx-auto w-full md:flex md:justify-between max-w-7xl">
-        <div class="mr-auto rtl:mr-0 rtl:ml-auto flex justify-between">
+      <div class="text-default relative mx-auto w-full max-w-7xl px-3 py-3 md:flex md:justify-between md:px-6">
+        <div class="mr-auto flex justify-between rtl:ml-auto rtl:mr-0">
           <a class="flex items-center" href={"/"}>
             <Logo />
           </a>
-          <div class="flex items-center md:hidden">
-            <ToggleTheme iconClass="w-6 h-6 md:w-5 md:h-5 md:inline-block" />
-            <ToggleMenu />
-          </div>
         </div>
         <nav
-          class="items-center w-full md:w-auto hidden md:flex text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:mx-5"
+          class="text-default hidden w-full items-center overflow-y-auto overflow-x-hidden md:mx-5 md:flex md:w-auto md:overflow-x-auto md:overflow-y-visible"
           aria-label="Main navigation"
         >
           {menu && menu.items ? (
-            <ul class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium">
+            <ul class="flex w-full flex-col text-xl font-medium tracking-[0.01rem] md:w-auto md:flex-row md:self-center md:text-[0.9375rem]">
               {menu.items.map(({ text, href, items }, key) => (
                 <li key={key} class={items?.length ? "dropdown" : ""}>
                   {items?.length ? (
                     <>
-                      <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center">
-                        {text} <IconChevronDown class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" />
+                      <button class="hover:text-link flex items-center px-4 py-3 dark:hover:text-white">
+                        {text}{" "}
+                        <IconChevronDown class="ml-0.5 hidden h-3.5 w-3.5 rtl:ml-0 rtl:mr-0.5 md:inline" />
                       </button>
-                      <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-slate-800 rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl">
+                      <ul class="dropdown-menu rounded pl-4 font-medium drop-shadow-xl md:absolute md:hidden md:min-w-[200px] md:bg-white/90 md:pl-0 md:backdrop-blur-md dark:md:bg-slate-800">
                         {items.map(({ text: text2, href: href2 }, key2) => (
                           <li key={key2}>
                             <a
-                              class="first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap"
+                              class="hover:text-link whitespace-no-wrap block px-5 py-2 first:rounded-t last:rounded-b dark:hover:bg-gray-700 dark:hover:text-white md:hover:bg-gray-100"
                               href={href2}
                             >
                               {text2}
@@ -67,7 +64,10 @@ export default component$(() => {
                       </ul>
                     </>
                   ) : (
-                    <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href={href}>
+                    <a
+                      class="hover:text-link items-centers flex px-4 py-3 dark:hover:text-white"
+                      href={href}
+                    >
                       {text}
                     </a>
                   )}
@@ -76,17 +76,14 @@ export default component$(() => {
             </ul>
           ) : null}
         </nav>
-        <div class="hidden md:self-center md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 md:p-0">
-          <div class="items-center flex justify-between w-full md:w-auto">
-            <div class="flex">
-              <ToggleTheme iconClass="w-6 h-6 md:w-5 md:h-5 md:inline-block" />
-            </div>
+        <div class="fixed bottom-0 left-0 hidden w-full items-center justify-end p-3 rtl:left-auto rtl:right-0 md:static md:mb-0 md:flex md:w-auto md:self-center md:p-0">
+          <div class="flex w-full items-center justify-between md:w-auto">
             <span class="ml-4 rtl:ml-0 rtl:mr-4">
               <a
                 href="https://github.com/onwidget/qwind"
-                class="btn btn-primary ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto"
+                class="btn btn-primary px-5.5 ml-2 w-auto py-2.5 text-sm font-semibold shadow-none md:px-6"
               >
-                Download
+                Sign up
               </a>
             </span>
           </div>

@@ -23,23 +23,44 @@ interface Props {
 }
 
 export default component$((props: Props) => {
-  const { id, title = "", subtitle = "", highlight = "", items = [], classes = {}, isDark = false } = props;
+  const {
+    id,
+    title = "",
+    subtitle = "",
+    highlight = "",
+    items = [],
+    classes = {},
+    isDark = false,
+  } = props;
 
   return (
     <section class="relative scroll-mt-16" {...(id ? { id } : {})}>
-      <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">
+      <div
+        class="pointer-events-none absolute inset-0 -z-[1]"
+        aria-hidden="true"
+      >
         <slot name="bg">
-          <div class={twMerge("absolute inset-0", isDark ? "bg-dark dark:bg-transparent" : "")}></div>
+          <div
+            class={twMerge(
+              "absolute inset-0",
+              isDark ? "bg-dark dark:bg-transparent" : "",
+            )}
+          ></div>
         </slot>
       </div>
       <div
         class={twMerge(
-          "relative mx-auto max-w-5xl px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default",
+          "text-default relative mx-auto max-w-5xl px-4 py-12 md:px-6 md:py-16 lg:py-20",
           classes?.container,
-          isDark ? "dark" : ""
+          isDark ? "dark" : "",
         )}
       >
-        <Headline title={title} subtitle={subtitle} highlight={highlight} classes={classes?.headline} />
+        <Headline
+          title={title}
+          subtitle={subtitle}
+          highlight={highlight}
+          classes={classes?.headline}
+        />
         <ItemGrid
           items={items}
           defaultIcon={IconStar}

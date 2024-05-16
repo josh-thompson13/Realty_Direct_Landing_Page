@@ -7,28 +7,30 @@ const sideImg =
 
 export default component$(() => {
   const stepsData = {
-    title: "Sed ac magna sit amet risus tristique interdum. hac.",
+    title: "It really is as simple as...",
     items: [
       {
         title: "Step 1",
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla. Praesent placerat enim ut ex tincidunt vehicula. Fusce sit amet dui tellus.",
+          "Start by signing up on our user-friendly platform. Once registered, you can easily enter your property details. We’ll guide you through the process, ensuring you include all the necessary information. After that, we’ll list your property on Australia's top real estate websites, maximizing your exposure to potential buyers.",
         icon: IconStar,
       },
       {
         title: "Step 2",
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla.",
+          // How could I write that better?
+          "When prospective buyers express interest, you'll be able to communicate directly with them. We facilitate seamless communication, allowing you to answer questions, schedule viewings, and negotiate terms. You’re in control, ensuring your property is presented exactly as you want it to be.",
         icon: IconStar,
       },
       {
         title: "Step 3",
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla.",
+          "Once you’ve found a buyer you’re happy with, it’s time to finalize the deal. We’ll provide all the necessary paperwork and legal documents to ensure a smooth transaction. You’ll have all the support you need to complete the sale confidently and efficiently.          ",
         icon: IconStar,
       },
       {
-        title: "Ready!",
+        title:
+          "That's it! Congratulations! You've sold your property and saved tens of thousands in agent fees. Our simple, transparent process puts you in control from start to finish.",
         icon: IconStar,
       },
     ],
@@ -40,10 +42,17 @@ export default component$(() => {
   const { title, items, image } = stepsData;
 
   return (
-    <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+    <section
+      id="steps"
+      class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20"
+    >
       <div class="row-gap-10 grid gap-6 md:grid-cols-2">
         <div class="mb-4 md:mb-0 md:py-4 md:pr-16">
-          {title && <h2 class="font-heading mb-8 text-3xl font-bold lg:text-4xl">{title}</h2>}
+          {title && (
+            <h2 class="font-heading mb-8 text-3xl font-bold lg:text-4xl">
+              {title}
+            </h2>
+          )}
           {Array.isArray(items) &&
             items.length &&
             items.map(({ title, description, icon: Icon }, index) => (
@@ -68,11 +77,21 @@ export default component$(() => {
                       </div>
                     )}
                   </div>
-                  {index !== items.length - 1 && <div class="h-full w-px bg-gray-300 dark:bg-slate-500"></div>}
+                  {index !== items.length - 1 && (
+                    <div class="h-full w-px bg-gray-300 dark:bg-slate-500"></div>
+                  )}
                 </div>
                 <div class={`pt-1 ${index !== items.length - 1 ? "pb-8" : ""}`}>
-                  {title && <p class="mb-2 text-xl font-bold text-gray-900 dark:text-slate-300">{title}</p>}
-                  {description && <p class="text-gray-600 dark:text-slate-400">{description}</p>}
+                  {title && (
+                    <p class="mb-2 text-xl font-bold text-gray-900 dark:text-slate-300">
+                      {title}
+                    </p>
+                  )}
+                  {description && (
+                    <p class="text-gray-600 dark:text-slate-400">
+                      {description}
+                    </p>
+                  )}
                 </div>
               </div>
             ))}

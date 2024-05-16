@@ -8,4 +8,4 @@
 - [Terms](/terms)
 - [Privacy](/privacy)
 
-## [Blog](/blog)
+## [Steps](#steps)
